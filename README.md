@@ -1,16 +1,30 @@
-# fruit_market
+# Vegetable Market UI 🔥 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Twitter Follow](https://img.shields.io/twitter/follow/devlonoah?style=social)](https://twitter.com/devlonoah)
 
-A new Flutter project.
+Simple Vegetable market
+<br>
+Star⭐ the repo if you like what you see😉
+[<img alt="Download APK" width="500px" src="screenshots/button-apk.png" />](https://drive.google.com/file/d/1LZsn84yKuQmHwk3KeyoVMP029zd3iAgk/view?usp=sharing)
+.
 
-## Getting Started
+[![Twitter Follow](https://img.shields.io/twitter/follow/devlonoah?style=social)](https://twitter.com/devlonoah)
 
-This project is a starting point for a Flutter application.
+## ✨ Requirements
 
-A few resources to get you started if this is your first Flutter project:
+- Any Operating System (ie. MacOS X, Linux, Windows)
+- Any IDE with SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
+- A little knowledge of Flutter and dart
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 📸 ScreenShots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+ <img src="screenshots/first.png" width="400">  <img src="screenshots/second.png" width="400"> 
+ <img src="screenshots/third.png" width="400">  <img src="screenshots/first.png" width="400">
+
+
+## 🤓 Author(s)
+
+**Opeyemi Lawal** [![Twitter Follow](https://img.shields.io/twitter/follow/devlonoah?style=social)](https://twitter.com/devlonoah)
+
+<!-- ## 🔖 LICENCE
+
+[WTFPL](http://www.wtfpl.net/about/) -->
