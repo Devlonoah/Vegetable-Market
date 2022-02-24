@@ -22,7 +22,10 @@ class ReusableListTile extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: Theme.of(context).textTheme.bodyText2,
+        style: Theme.of(context)
+            .textTheme
+            .bodyText2
+            ?.copyWith(fontWeight: FontWeight.w600),
       ),
     );
   }

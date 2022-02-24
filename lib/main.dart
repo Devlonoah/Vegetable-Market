@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'search/search.dart';
 import 'color.dart';
 import 'pages/cart/cart_page.dart';
 import 'pages/favourite/favourite.dart';
@@ -31,10 +33,7 @@ class _FruitMarketState extends State<FruitMarket> {
           primaryColor: AppPallete.green,
           scaffoldBackgroundColor: AppPallete.white,
           appBarTheme: AppBarTheme(backgroundColor: AppPallete.green)),
-      routes: {
-        SettingsPage.id: (context) => const SettingsPage(),
-        CartPage.id: (context) => const CartPage()
-      },
+      scrollBehavior: const CupertinoScrollBehavior(),
       home: const NavScreen(),
     );
   }
@@ -50,6 +49,7 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = const [
     HomePage(),
+    SearchPage(),
     ShoppingCartPage(),
     FavouritePage(),
     UserAccountPage(),
@@ -57,6 +57,7 @@ class _NavScreenState extends State<NavScreen> {
 
   final List<IconData> _icons = [
     Icons.home,
+    Icons.search,
     Icons.shop,
     Icons.favorite,
     Icons.person,
@@ -80,9 +81,3 @@ class _NavScreenState extends State<NavScreen> {
     );
   }
 }
-
-// var listOfTabPages = [
-//   const HomePage(),
-//   const Scaffold(),
-//   const Scaffold(),
-// ];

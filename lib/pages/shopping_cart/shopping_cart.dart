@@ -9,36 +9,24 @@ class ShoppingCartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          _addressWidget(context),
-          _categoryTitleAndProductList(context)
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            _addressWidget(context),
+            Expanded(child: _categoryTitleAndProductList(context))
+          ],
+        ),
       ),
     );
   }
 
   Widget _categoryTitleAndProductList(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: double.infinity,
-          color: AppPallete.grey.withOpacity(0.3),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              left: 16.0,
-              top: 10,
-              bottom: 10,
-            ),
-            child: Text(
-              'Vegetables',
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
-          ),
-        ),
-        for (var x in organicVegetable)
-          Padding(
+    return ListView.separated(
+        itemCount: organicVegetable.length,
+        separatorBuilder: (context, index) => const Divider(),
+        itemBuilder: (context, index) {
+          var x = organicVegetable[index];
+          return Padding(
             padding: const EdgeInsets.symmetric(
               vertical: 12,
               horizontal: 16.0,
@@ -67,7 +55,7 @@ class ShoppingCartPage extends StatelessWidget {
                             style:
                                 Theme.of(context).textTheme.bodyText2?.copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 12,
+                                      fontSize: 13,
                                     ),
                           ),
                           const SizedBox(width: 8),
@@ -89,25 +77,23 @@ class ShoppingCartPage extends StatelessWidget {
                       const SizedBox(height: 8),
                       Text(
                         'Rs 190',
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(decoration: TextDecoration.lineThrough),
+                        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                              decoration: TextDecoration.lineThrough,
+                              color: AppPallete.grey,
+                            ),
                       ),
                       const SizedBox(height: 8),
                       Text(
                         '150 Per/ kg',
                         style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 12,
-                            ),
+                            fontWeight: FontWeight.w500, fontSize: 16),
                       ),
                       const SizedBox(height: 5),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          const ReusableIncrementButton(),
-                          const SizedBox(width: 4),
+                          const ReusableIncrementButton(isReduce: true),
+                          const SizedBox(width: 8),
                           Text(
                             '10',
                             style:
@@ -116,7 +102,7 @@ class ShoppingCartPage extends StatelessWidget {
                                       fontSize: 14,
                                     ),
                           ),
-                          const SizedBox(width: 4),
+                          const SizedBox(width: 8),
                           const ReusableIncrementButton(),
                         ],
                       )
@@ -125,9 +111,8 @@ class ShoppingCartPage extends StatelessWidget {
                 )
               ],
             ),
-          )
-      ],
-    );
+          );
+        });
   }
 
   Container _addressWidget(BuildContext context) {
@@ -135,12 +120,12 @@ class ShoppingCartPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20),
       child: Row(
         children: [
-          const Icon(
+          Icon(
             Icons.location_pin,
-            size: 15,
-            color: Colors.black54,
+            size: 16,
+            color: AppPallete.green,
           ),
-          const SizedBox(width: 8),
+          const SizedBox(width: 5),
           Expanded(
             child: Row(
               children: [
@@ -148,30 +133,76 @@ class ShoppingCartPage extends StatelessWidget {
                   '440001 Lekki ,Lagos',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                      fontSize: 10),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyText2
+                      ?.copyWith(fontWeight: FontWeight.w600, fontSize: 13),
                 ),
                 const SizedBox(width: 5),
-                const RotatedBox(
+                RotatedBox(
                   quarterTurns: 3,
                   child: Icon(
                     Icons.arrow_back_ios_new,
-                    size: 20,
+                    size: 14,
+                    color: AppPallete.green,
                   ),
                 ),
               ],
             ),
           ),
           GestureDetector(
-            onTap: () {},
-            child: Text(
-              'Change Address',
-              style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: AppPallete.grey,
-                  fontSize: 10),
+            onTap: () async {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(
+                      backgroundColor: Colors.transparent,
+                      // shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(30)),
+
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: AppPallete.green.withOpacity(0.9),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        padding: const EdgeInsets.only(left: 16),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Location Selected',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    ?.copyWith(color: AppPallete.white),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: AppPallete.white.withOpacity(0.3),
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                // color: AppPallete.white,
+                                child: CloseButton(
+                                  color: AppPallete.white,
+                                ),
+                              )
+                            ]),
+                      ),
+                    );
+                  });
+            },
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                color: AppPallete.green,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: Icon(
+                Icons.location_on,
+                size: 20.0,
+                color: AppPallete.white,
+              ),
             ),
           )
         ],

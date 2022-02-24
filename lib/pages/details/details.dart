@@ -46,80 +46,79 @@ class DetailPage extends StatelessWidget {
   Widget _bodyWidget(FruitModel fruitModel, BuildContext context) {
     return Expanded(
       child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const SizedBox(height: 16),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: AppPallete.indigo,
-                      borderRadius: BorderRadius.circular(15)),
-                  width: 200,
-                  height: 150,
-                  child: Image.asset(fruitModel.imageUrl!, fit: BoxFit.cover),
-                ),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                fruitModel.name,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline6
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0),
-                child: Text(
-                  fruitModel.description!,
-                  style: Theme.of(context).textTheme.bodyText2?.copyWith(
-                        fontSize: 14,
-                      ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              Text(
-                'Nutrition',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline6
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 16),
-              Column(
-                  children: fruitModel.nutrients!
-                      .map((e) => Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 5,
-                                  width: 5,
-                                  decoration: BoxDecoration(
-                                      color: AppPallete.grey,
-                                      shape: BoxShape.circle),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: 100,
+              child: Image.asset(fruitModel.imageUrl!, fit: BoxFit.fill),
+            ),
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    fruitModel.name,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      fruitModel.description!,
+                      style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                            fontSize: 14,
+                          ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    'Nutrition',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline6
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 16),
+                  Column(
+                      children: fruitModel.nutrients!
+                          .map((e) => Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 4.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      height: 5,
+                                      width: 5,
+                                      decoration: BoxDecoration(
+                                          color: AppPallete.grey,
+                                          shape: BoxShape.circle),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Text(
+                                      e,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText2
+                                          ?.copyWith(
+                                            fontSize: 14,
+                                          ),
+                                    )
+                                  ],
                                 ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  e,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2
-                                      ?.copyWith(
-                                        fontSize: 14,
-                                      ),
-                                )
-                              ],
-                            ),
-                          ))
-                      .toList()),
-              const SizedBox(height: 20),
-            ],
-          ),
+                              ))
+                          .toList()),
+                ],
+              ),
+            ),
+            const SizedBox(height: 5),
+          ],
         ),
       ),
     );

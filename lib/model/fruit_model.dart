@@ -40,102 +40,83 @@ const _generalImagePath = 'assets/images/asset.png';
 List<FruitModel> organicVegetable = [
   FruitModel(
     name: 'Broccoli',
+    imageUrl: 'assets/images/leaf.jpeg',
     pricePerKg: 100,
     isFavourite: true,
   ),
   FruitModel(
-    name: 'Brinjelis',
+    imageUrl: 'assets/images/melon.jpeg',
+    name: 'melon',
     pricePerKg: 72,
     isFavourite: true,
   ),
   FruitModel(
-    name: 'Corriander',
-    pricePerKg: 92,
-  ),
-  FruitModel(
-    name: 'Broccoli',
+    name: 'Pepper',
+    imageUrl: 'assets/images/pepper.jpeg',
     pricePerKg: 190,
   ),
   FruitModel(
-    name: 'Broccoli',
+    name: 'Tomato',
+    imageUrl: 'assets/images/tomato.jpeg',
     pricePerKg: 100,
     isFavourite: true,
   ),
   FruitModel(
-    name: 'Brinjelis',
+    name: 'Broccoli',
+    imageUrl: 'assets/images/leaf.jpeg',
+    pricePerKg: 100,
+    isFavourite: true,
+  ),
+  FruitModel(
+    imageUrl: 'assets/images/melon.jpeg',
+    name: 'melon',
     pricePerKg: 72,
     isFavourite: true,
   ),
   FruitModel(
-    name: 'Corriander',
-    pricePerKg: 92,
-  ),
-  FruitModel(
-    name: 'Broccoli',
+    name: 'Pepper',
+    imageUrl: 'assets/images/pepper.jpeg',
     pricePerKg: 190,
   ),
-];
-
-var mixedVegetablePack = [
   FruitModel(
-    name: 'Multi Vegetables',
-    pricePerKg: 370,
+    name: 'Tomato',
+    imageUrl: 'assets/images/tomato.jpeg',
+    pricePerKg: 100,
     isFavourite: true,
-  ),
-  FruitModel(
-    name: 'Paper Vegetables',
-    pricePerKg: 270,
-    isFavourite: false,
-  ),
-  FruitModel(
-    name: 'Tropicana',
-    pricePerKg: 180,
-  ),
-  FruitModel(
-    name: 'Multi Vegetables',
-    pricePerKg: 370,
-    isFavourite: true,
-  ),
-  FruitModel(
-    name: 'Paper Vegetables',
-    pricePerKg: 270,
-  ),
-  FruitModel(
-    name: 'Tropicana',
-    pricePerKg: 180,
   ),
 ];
 
-var alliumVegetables = [
-  FruitModel(
-    name: 'Onion',
-    pricePerKg: 130,
-    isFavourite: false,
-  ),
-  FruitModel(
-    name: 'Garlic',
-    pricePerKg: 110,
-    isFavourite: true,
-  ),
-  FruitModel(
-    name: 'Ginger',
-    pricePerKg: 180,
-  ),
-  FruitModel(
-    name: 'Onion',
-    pricePerKg: 130,
-    isFavourite: false,
-  ),
-  FruitModel(
-    name: 'Garlic',
-    pricePerKg: 110,
-    isFavourite: true,
-  ),
-  FruitModel(
-    name: 'Ginger',
-    pricePerKg: 180,
-  ),
-];
+
+// var alliumVegetables = [
+//   FruitModel(
+//     name: 'Onion',
+//     pricePerKg: 130,
+//     isFavourite: false,
+//   ),
+//   FruitModel(
+//     name: 'Garlic',
+//     pricePerKg: 110,
+//     isFavourite: true,
+//   ),
+//   FruitModel(
+//     name: 'Ginger',
+//     pricePerKg: 180,
+//   ),
+//   FruitModel(
+//     name: 'Onion',
+//     pricePerKg: 130,
+//     isFavourite: false,
+//   ),
+//   FruitModel(
+//     name: 'Garlic',
+//     pricePerKg: 110,
+//     isFavourite: true,
+//   ),
+//   FruitModel(
+//     name: 'Ginger',
+//     pricePerKg: 180,
+//   ),
+// ];
 
 // List<Map<String, List<FruitModel>>> vegetables = [
 
@@ -325,7 +306,7 @@ var alliumVegetables = [
 //   {
 //     "Kasmiri Dry Fruits": [
 //       FruitModel(
-//         name: 'Zobo leaf',
+//         name: 'Zobo leaf.jpeg',
 //         pricePerKg: 130,
 //       ),
 //       FruitModel(

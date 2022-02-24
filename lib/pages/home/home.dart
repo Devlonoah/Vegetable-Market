@@ -21,23 +21,25 @@ class HomePage extends StatelessWidget {
             typeName: 'Organic Vegetables',
           ),
           const SliverPadding(padding: EdgeInsets.all(10)),
+
           TypeOfFruit(
-            subtitle: 'Vegetable Mix Fresh pack',
-            fruits: mixedVegetablePack,
+            subtitle: 'Pick up from organic farms',
+            fruits: organicVegetable..shuffle(),
+            typeName: 'Organic Vegetables',
+          ),
+
+          const SliverPadding(padding: EdgeInsets.all(10)),
+          TypeOfFruit(
+            subtitle: 'Fresh vegetables',
+            fruits: organicVegetable..shuffle(),
             typeName: 'Organic Vegetables',
           ),
           const SliverPadding(padding: EdgeInsets.all(10)),
-          TypeOfFruit(
-            subtitle: 'Fresh Alluminium vegetables',
-            fruits: alliumVegetables,
-            typeName: 'Allium Vegetables',
-          ),
-          const SliverPadding(padding: EdgeInsets.all(10)),
-          TypeOfFruit(
-            subtitle: 'Fresh Alluminium vegetables',
-            fruits: alliumVegetables,
-            typeName: 'Allium Vegetables',
-          ),
+          // TypeOfFruit(
+          //   subtitle: 'Fresh Alluminium vegetables',
+          //   fruits: alliumVegetables,
+          //   typeName: 'Allium Vegetables',
+          // ),
           const SliverPadding(padding: EdgeInsets.all(50)),
         ],
       ),
@@ -82,14 +84,14 @@ class HomePage extends StatelessWidget {
             child: Container(
               color: AppPallete.green,
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              height: 100,
+              height: MediaQuery.of(context).padding.top + 100,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Fruit Market',
                     style: Theme.of(context).textTheme.headline6?.copyWith(
-                        fontWeight: FontWeight.w500, color: AppPallete.white),
+                        fontWeight: FontWeight.w900, color: AppPallete.white),
                   ),
                   GestureDetector(
                     onTap: () {},
@@ -129,19 +131,14 @@ class HomePage extends StatelessWidget {
                     ),
                     const SizedBox(width: 5),
                     Expanded(
-                        child: TextField(
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyText2
-                          ?.copyWith(fontWeight: FontWeight.w600, fontSize: 13),
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'hintText',
-                        hintStyle:
-                            Theme.of(context).textTheme.subtitle2?.copyWith(
-                                  color: AppPallete.grey.withOpacity(0.6),
-                                ),
+                      child: Text(
+                        'Search Vegetables',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            ?.copyWith(fontSize: 12, color: AppPallete.grey),
                       ),
-                    ))
+                    )
                   ],
                 ),
               ),
@@ -204,7 +201,7 @@ class TypeOfFruit extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             SizedBox(
               height: 165,
               child: ListView.builder(
@@ -261,6 +258,7 @@ class TypeOfFruit extends StatelessWidget {
                                 )
                               ],
                             )),
+                            const SizedBox(height: 8),
                             Row(
                               children: List.generate(
                                 5,
@@ -280,10 +278,10 @@ class TypeOfFruit extends StatelessWidget {
                                   .bodyText2
                                   ?.copyWith(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 10),
+                                      fontSize: 13),
                             ),
                             Text(
-                              '₹ ${_fruitModel.pricePerKg.toInt()} Per/ kg',
+                              '\$ ${_fruitModel.pricePerKg.toInt()} Per/ kg',
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle2

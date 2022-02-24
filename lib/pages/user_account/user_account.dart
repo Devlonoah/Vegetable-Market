@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../color.dart';
-import '../cart/cart_page.dart';
+
 import '../settings/settings.dart';
 import '../../widgets/reusable_listtile.dart';
 
@@ -26,7 +26,7 @@ class UserAccountPage extends StatelessWidget {
           ReusableListTile(
             leadingIcon: Icons.shopping_cart,
             title: 'My Cart',
-            onTap: () => _navigateToCartPage(context),
+            // onTap: () => _navigateToCartPage(context),
           ),
           ReusableListTile(
             leadingIcon: Icons.rate_review,
@@ -105,5 +105,5 @@ class UserAccountPage extends StatelessWidget {
       Navigator.pushNamed(context, SettingsPage.id);
 }
 
-_navigateToCartPage(BuildContext context) =>
-    Navigator.pushNamed(context, CartPage.id);
+// _navigateToCartPage(BuildContext context) =>
+//     Navigator.pushNamed(context, CartPage.id);
