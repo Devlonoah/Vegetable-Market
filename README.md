@@ -17,11 +17,11 @@ Star⭐ the repo if you like what you see😉
 ## 📸 ScreenShots
 
 
- <img src="screenshots/shot1.png" width="200"> 
- <img src="screenshots/shot2.png" width="200"> 
+ <img src="screenshots/shot1.png" width="150"> 
+ <img src="screenshots/shot2.png" width="150"> 
  <br>
- <img src="screenshots/shot3.png" width="200">
- <img src="screenshots/shot4.png" width="200">
+ <img src="screenshots/shot3.png" width="150">
+ <img src="screenshots/shot4.png" width="150">
 
 
 ## 🤓 Author(s)
